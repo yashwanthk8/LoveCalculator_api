@@ -1,6 +1,6 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://love-calculator-ui.vercel.app/'
+    origins 'https://love-calculator-ui.vercel.app'
 
     resource '*',
       headers: :any,
