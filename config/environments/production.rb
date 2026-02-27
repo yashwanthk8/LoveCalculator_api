@@ -40,10 +40,10 @@ Rails.application.configure do
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
 
-  # Replace the default in-process memory cache store with a durable alternative.
-  config.cache_store = :solid_cache_store
+  # Use file-based caching for production.
+  config.cache_store = :file_store, "#{Rails.root}/tmp/cache"
 
-  # Replace the default in-process and non-durable queuing backend for Active Job.
+  # Use async queuing for Active Job.
   config.active_job.queue_adapter = :async
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
